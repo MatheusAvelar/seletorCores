@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <title>Seletor de Cores</title>
+  </head>
+  <style type="text/css">
+    body {
+      height: 100vh;
+      margin: 0;
+      padding: 1rem;
+      display: grid;
+      place-items: center;
+      font-family: system-ui;
+    }
+    span {
+      display: block;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: normal;
+      font-family: monospace;
+    }
+    div.divButton {
+      height: 10em;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+  </style>
+  <script type="text/javascript">
+    function coresAleatorias(){
+      var cor = '';
+      while (cor.length < 6) {
+        cor += (Math.random()).toString(16).substr(-6).substr(-1)
+      }
+      var newColor =  '#' + cor;
+      document.body.style.backgroundColor = newColor;
+      document.querySelector('#color').textContent = newColor;
+    }
+  </script>
+  <body>
+    <div class="divButton">
+      <button id="novaCor" onclick="coresAleatorias()">Mudar de Cor</button>
+      <span id="color"></span>
+    </div>
+  </body>
+</html>
